@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration - Chuo Cha Maendeleo Ya Wananchi Msinga (FDC)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar Include -->
+    <?php include 'includes/navbar.php'; ?>
+
+    <!-- Registration Form Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Register</h6>
+                <h1 class="mb-5">Student Registration Form</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="myForm" class="bg-light p-5 rounded">
+                        <div class="mb-3 text-center">
+                            <label for="imgInput" class="upload">
+                                <input type="file" name="picture" id="imgInput" accept="image/*" required>
+                                <i class="bi bi-plus-circle-dotted"></i>
+                            </label>
+                            <img src="./image/Profile Icon.webp" alt="Profile Picture" width="200" height="200" class="img mt-3">
+                        </div>
+                        <div class="inputField">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Age:</label>
+                                <input type="number" class="form-control" id="age" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">City:</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Number:</label>
+                                <input type="text" class="form-control" id="phone" minlength="11" maxlength="11" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="post" class="form-label">Post:</label>
+                                <input type="text" class="form-control" id="post" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sDate" class="form-label">Start Date:</label>
+                                <input type="date" class="form-control" id="sDate" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                    </form>
+
+                    <!-- Success/Error Messages -->
+                    <div id="message" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration Form End -->
+
+    <!-- Footer Include -->
+    <?php include 'includes/footer.php'; ?>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
