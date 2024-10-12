@@ -10,6 +10,9 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,16 +31,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+   
     <!-- Spinner End -->
 
 
@@ -59,7 +58,7 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.html" class="dropdown-item">Our Team</a>
                         <a href="faqs.html" class="dropdown-item">Faqs</a>
-                        <a href="404.html" class="dropdown-item active">404 Page</a>
+                        <a href="404.html" class="dropdown-item">sera na sheria</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -71,40 +70,165 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Not Found</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">404</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- Header End -->
 
 
     <!-- 404 Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
-                    <h1 class="display-1">404</h1>
-                    <h1 class="mb-4">Page Not Found</h1>
-                    <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Back To Home</a>
+     <!-- Main Content -->
+     <main>
+        <!-- Container 1: Course Table with Filtering and Searching -->
+        <section id="course-table" class="section">
+            <div class="container">
+                <h2>Available Courses</h2>
+                
+                <!-- Search and Filter Controls -->
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search by course name..." />
+                    </div>
+                    <div class="filter-box">
+                        <i class="fas fa-filter"></i>
+                        <select id="duration-filter">
+                            <option value="all">All Durations</option>
+                            <option value="short">Short Duration</option>
+                            <option value="long">Long Duration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Courses Table -->
+                <table class="courses-table" aria-label="Available Courses">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web Development Bootcamp</td>
+                            <td>Long</td>
+                            <td>$499</td>
+                        </tr>
+                        <tr>
+                            <td>Data Science Fundamentals</td>
+                            <td>Long</td>
+                            <td>$599</td>
+                        </tr>
+                        <tr>
+                            <td>Graphic Design Basics</td>
+                            <td>Short</td>
+                            <td>$299</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Marketing 101</td>
+                            <td>Short</td>
+                            <td>$349</td>
+                        </tr>
+                        <!-- Add more courses as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Container 2: Payment Structure Table -->
+        <section id="payment-structure" class="section">
+            <div class="container">
+                <h2>Payment Structure</h2>
+                <table class="payment-table" aria-label="Payment Structure">
+                    <thead>
+                        <tr>
+                            <th>Type of Payment</th>
+                            <th>Year Payment</th>
+                            <th>First Semester</th>
+                            <th>Second Semester</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tuition</td>
+                            <td>$600</td>
+                            <td>$300</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <td>Materials</td>
+                            <td>$200</td>
+                            <td>$100</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <td>Registration</td>
+                            <td>$100</td>
+                            <td>$50</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Payment</strong></td>
+                            <td><strong>$900</strong></td>
+                            <td><strong>$450</strong></td>
+                            <td><strong>$450</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Container 3: School Instructions with Categories and Sub-Containers -->
+        <section id="school-instructions" class="section">
+            <div class="container">
+                <h2>School Instructions</h2>
+                <div class="instructions-grid">
+                    <!-- Instruction Category 1 -->
+                    <div class="instruction-card">
+                        <h3>Admission Process</h3>
+                        <ul>
+                            <li>Submit application form</li>
+                            <li>Provide necessary documents</li>
+                            <li>Attend interview</li>
+                            <li>Receive admission confirmation</li>
+                        </ul>
+                    </div>
+                    <!-- Instruction Category 2 -->
+                    <div class="instruction-card">
+                        <h3>Attendance Policy</h3>
+                        <ul>
+                            <li>Minimum 75% attendance required</li>
+                            <li>Leave applications must be submitted in advance</li>
+                            <li>Excessive absences may lead to dismissal</li>
+                            <li>Special considerations for emergencies</li>
+                        </ul>
+                    </div>
+                    <!-- Instruction Category 3 -->
+                    <div class="instruction-card">
+                        <h3>Examination Guidelines</h3>
+                        <ul>
+                            <li>All exams are scheduled in advance</li>
+                            <li>Bring valid ID to exams</li>
+                            <li>No electronic devices allowed</li>
+                            <li>Cheating and plagiarism are strictly prohibited</li>
+                        </ul>
+                    </div>
+                    <!-- Instruction Category 4 -->
+                    <div class="instruction-card">
+                        <h3>Graduation Requirements</h3>
+                        <ul>
+                            <li>Complete all required courses</li>
+                            <li>Maintain a minimum GPA of 2.5</li>
+                            <li>Submit a final project or thesis</li>
+                            <li>Attend the graduation ceremony</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- 404 End -->
+        </section>
+    </main>
+
+    
+     <!-- 404 End -->
         
 
     <!-- Footer Start -->
@@ -113,11 +237,11 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="404.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="404.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="faqs.html">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -135,22 +259,22 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/bomba 1.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/chekechea 2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/wanampira 2.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/wanafunz.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/mwalim.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/umeme 3.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -171,14 +295,14 @@
                         &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://.com">Zainabu</a><br><br>
+                        Designed By <a class="border-bottom" href="https://.com">zainabu</a><br><br>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
+                            <a href="index.html">Home</a>
                             <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="404.html">Help</a>
+                            <a href="faqs.html">FQAs</a>
                         </div>
                     </div>
                 </div>
@@ -200,8 +324,17 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-course-title">Course Title</h2>
+            <p id="modal-course-details">Detailed information about the course...</p>
+        </div>
+    </div>
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+
+    <script src="js/course.js"></script>
 </body>
 
 </html>

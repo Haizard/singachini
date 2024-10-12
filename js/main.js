@@ -126,3 +126,5 @@ function toggleFaq(element) {
         currentAnswer.style.display = 'block'; // Show the clicked answer
     }
 }
+
+

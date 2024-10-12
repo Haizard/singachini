@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #1abc9c, #16a085);
+    color: #ecf0f1;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #ecf0f1;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #1abc9c;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Filter Controls */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-controls .search-box,
+.filter-controls .filter-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-controls input,
+.filter-controls select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    max-width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.filter-controls input:focus,
+.filter-controls select:focus {
+    border-color: #1abc9c;
+    outline: none;
+}
+
+.filter-controls i {
+    color: #2980b9;
+}
+
+/* Location Fields */
+.location-fields {
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Add space between fields */
+    margin-bottom: 20px;
+}
+
+.location-fields div {
+    flex: 1; /* Allow fields to grow equally */
+    min-width: 150px; /* Set a minimum width for small devices */
+}
+
+/* Courses Table */
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.courses-table th,
+.courses-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.courses-table th {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.courses-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.courses-table tr:hover {
+    background-color: #ddd;
+}
+
+.courses-table td {
+    color: #34495e;
+}
+
+/* Payment Structure Table */
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-table th,
+.payment-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.payment-table th {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.payment-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.payment-table tr:hover {
+    background-color: #ececec;
+}
+
+.payment-table td {
+    color: #2c3e50;
+}
+
+.payment-table td strong {
+    color: #c0392b;
+}
+
+/* School Instructions */
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.instruction-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instruction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.instruction-card h3 {
+    margin-bottom: 10px;
+    color: #2980b9;
+    font-size: 1.5em;
+}
+
+.instruction-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #34495e;
+}
+
+.instruction-card ul li {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #1abc9c, #16a085);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Modal Styles (Optional) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%; 
+    max-width: 600px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: #1abc9c;
+        transition: left 0.3s ease-in;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+    }
+
+    .filter-controls .search-box,
+    .filter-controls .filter-box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Adjust location fields for small devices */
+    .location-fields {
+        flex-direction: column; /* Stack fields vertically */
+    }
+
+    .location-fields div {
+        min-width: 100%; /* Allow full width for each field */
+    }
+}
