@@ -753,7 +753,8 @@
 
 
 .img-fluid {
-   height: 10rem;
+    object-fit: contain;
+    width: 100%;
 }
 
 
