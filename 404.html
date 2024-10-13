@@ -1,340 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Chuo Cha Maendeleo Ya Wananchi Msinga (FDC)</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZINGATIA - Chuo</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6B9mJiB+OGknL+Ld1J0n5LGx2nYdVqD9IqkmqFoa6U+BtIOuBhnBqqhX5x3P3p8VZgXug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    /* Existing Styles */
+/* Existing Styles */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+nav {
+    margin-top: 10px;
+    display: flex; /* Use flexbox for the nav */
+    justify-content: center; /* Center the nav items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+nav a {
+    color: #8b1818;
+    margin: 0 10px; /* Reduced margin for spacing */
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 15px; /* Add padding for better touch targets */
+    position: relative; /* Required for pseudo-element positioning */
+}
+nav a::after {
+    content: "";
+    display: block;
+    width: 1px; /* Width of the separator line */
+    height: 20px; /* Height of the separator line */
+    background-color: rgba(255, 255, 255, 0.5); /* Color of the separator line */
+    position: absolute;
+    right: -5px; /* Positioning the separator on the right of the link */
+    top: 50%; /* Center it vertically */
+    transform: translateY(-50%); /* Center it vertically */
+}
+nav a:last-child::after {
+    display: none; /* Remove separator after the last link */
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+section {
+    margin-bottom: 40px;
+}
+h2 {
+    color: #2575fc;
+    border-bottom: 2px solid #2575fc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h3 {
+    color: #6a11cb;
+    margin-top: 20px;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+ul li {
+    background: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/check.svg') no-repeat left center;
+    background-size: 16px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.accordion {
+    background-color: #2575fc;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.home_button {
+    background-color: #25fc3b;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 4rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.accordion.active, .accordion:hover {
+    background-color: #6a11cb;
+}
+.panel {
+    padding: 0 15px;
+    display: none;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+footer {
+    background-color: #2575fc;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+/* New Styles for Fee Structure Tables */
+.fee-structure {
+    margin-top: 40px;
+}
+.fee-structure h2 {
+    margin-bottom: 20px;
+}
+.fee-tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+/* Tables take full width on small devices */
+.fee-table {
+    flex: 1 1 calc(50% - 20px); /* Two tables per row */
+    min-width: 300px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+.fee-table th, .fee-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px; /* Reduced padding for small screens */
+    text-align: center;
+    font-size: 14px; /* Reduced font size for better readability */
+}
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+.fee-table th {
+    background-color: #2575fc;
+    color: #fff;
+    font-weight: bold;
+}
+.fee-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.fee-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
 
-    <!-- Template Stylesheet -->
-    <link href="css/main.css" rel="stylesheet">
+/* Media Queries for Small Devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: space-around; /* Distribute space around items */
+    }
+    nav a {
+        margin: 0 5px; /* Even smaller margin for tight spacing */
+        flex: 1; /* Allow links to grow and take equal space */
+        text-align: center; /* Center align text */
+    }
+    .accordion {
+        font-size: 1em;
+    }
+}
+
+/* Additional Media Query for very small devices */
+@media (max-width: 400px) {
+    .fee-table th, .fee-table td {
+        padding: 6px; /* Further reduce padding for very small screens */
+        font-size: 12px; /* Further reduce font size for very small screens */
+    }
+}
+
+    </style>
 </head>
-
 <body>
-    <!-- Spinner Start -->
-   
-    <!-- Spinner End -->
 
+    <header>
+        <h1>ZINGATIA</h1>
+        <nav>
+            <a class="home_button" href="index.html">Home</a>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Chuo Cha Maendeleo Ya<br> Wananchi Msinga (FDC)</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="faqs.html" class="dropdown-item">Faqs</a>
-                        <a href="404.html" class="dropdown-item">sera na sheria</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="#zingatia">ZINGATIA</a>
+            <a href="#fee-structure">Fee Structure</a> <!-- Added Navigation Link -->
+            <a href="#sale-ya-shule">Sale ya Shule</a>
+            <a href="#mahitaji">Mahitaji</a>
+            <a href="#sheria">Sheria</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Existing Sections -->
+
+        <!-- ZINGATIA Section -->
+        <section id="zingatia">
+            <h2>ZINGATIA</h2>
+            <ul>
+                <li>Michango mingine yote italipwa kwenye account ya chuo (A/C Na. 40302519545, jIna MSINGA FOLK DEVELOPMENT COLLEGE – NMB Bank.)</li>
+                <li>Hela ya mtihani wa VETA itategemea viwango vya mtihani kwa kipindi husika na mzazi atajulishwa.</li>
+                <li>Gharama za fomu ni shillingi elfu (10,000/=) ilipiwe kwenye account ya chuo.</li>
+            </ul>
+        </section>
+
+        <!-- SALE YA SHULE Section -->
+        <section id="sale-ya-shule">
+            <h2>SALE YA SHULE</h2>
+
+            <button class="accordion">a) Wavulana</button>
+            <div class="panel">
+                <ul>
+                    <li>Suruali (2) za kitambaa rangi ya damu ya mzee na mashati (2) ya mikono mirefu ya rangi ya bluu Bahari.</li>
+                    <li>Viatu vyeusi vy Kamba na soksi nyeusi.</li>
+                    <li>Track suit damu ya mzee yenye mistari ya rangi nyeupe n araba kwa ajili ya michezo.</li>
+                    <li>Jezi ya michezo rangi nyeusi.</li>
+                    <li>Swta ya chuo ya rangi ya damu ya mzee.</li>
+                </ul>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+
+            <button class="accordion">b) Wasichana</button>
+            <div class="panel">
+                <ul>
+                    <li>Suruali au skert yenye V mbele (2) za kitambaa cha rangi ya damu ya mzee na mshati (2) ya mikono mirefu ya rangi ya bluu Bahari.</li>
+                    <li>Viatu vyeusi na soksi nyeupe.</li>
+                    <li>Track suit damu ya mzee yenye mistari ya rangi nyeupe n araba kwa ajili ya michezo.</li>
+                    <li>Wasichana wanaruhusiwa kusuka msuko w twende kilioni na Kilimanjaro tu.</li>
+                </ul>
+                <h3>Aina ya Rangi ya Sale za Shule</h3>
+                <p>Kwa upande wa suruali/sketi na mashati.</p>
+            </div>
+        </section>
+
+
+            <!-- New Fee Structure Section -->
+       <section id="fee-structure" class="fee-structure">
+        <h2>Fee Structure</h2>
+        <div class="fee-tables">
+            <!-- Table 1 -->
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Tuition</th>
+                        <th>Books</th>
+                        <th>Materials</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Program A</td>
+                        <td>$1,000</td>
+                        <td>$200</td>
+                        <td>$150</td>
+                        <td>$1,350</td>
+                    </tr>
+                    <tr>
+                        <td>Program B</td>
+                        <td>$1,200</td>
+                        <td>$250</td>
+                        <td>$180</td>
+                        <td>$1,630</td>
+                    </tr>
+                    <tr>
+                        <td>Program C</td>
+                        <td>$900</td>
+                        <td>$180</td>
+                        <td>$120</td>
+                        <td>$1,200</td>
+                    </tr>
+                    <tr>
+                        <td>Program D</td>
+                        <td>$1,100</td>
+                        <td>$220</td>
+                        <td>$160</td>
+                        <td>$1,480</td>
+                    </tr>
+                    <tr>
+                        <td>Program E</td>
+                        <td>$1,300</td>
+                        <td>$300</td>
+                        <td>$200</td>
+                        <td>$1,800</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Table 2 -->
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Tuition</th>
+                        <th>Books</th>
+                        <th>Materials</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Program F</td>
+                        <td>$1,050</td>
+                        <td>$210</td>
+                        <td>$160</td>
+                        <td>$1,420</td>
+                    </tr>
+                    <tr>
+                        <td>Program G</td>
+                        <td>$1,250</td>
+                        <td>$270</td>
+                        <td>$190</td>
+                        <td>$1,710</td>
+                    </tr>
+                    <tr>
+                        <td>Program H</td>
+                        <td>$950</td>
+                        <td>$190</td>
+                        <td>$130</td>
+                        <td>$1,270</td>
+                    </tr>
+                    <tr>
+                        <td>Program I</td>
+                        <td>$1,150</td>
+                        <td>$230</td>
+                        <td>$170</td>
+                        <td>$1,550</td>
+                    </tr>
+                    <tr>
+                        <td>Program J</td>
+                        <td>$1,350</td>
+                        <td>$330</td>
+                        <td>$220</td>
+                        <td>$1,900</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Table 3 -->
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Tuition</th>
+                        <th>Books</th>
+                        <th>Materials</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Program K</td>
+                        <td>$1,100</td>
+                        <td>$220</td>
+                        <td>$170</td>
+                        <td>$1,490</td>
+                    </tr>
+                    <tr>
+                        <td>Program L</td>
+                        <td>$1,300</td>
+                        <td>$300</td>
+                        <td>$210</td>
+                        <td>$1,810</td>
+                    </tr>
+                    <tr>
+                        <td>Program M</td>
+                        <td>$1,000</td>
+                        <td>$200</td>
+                        <td>$140</td>
+                        <td>$1,340</td>
+                    </tr>
+                    <tr>
+                        <td>Program N</td>
+                        <td>$1,200</td>
+                        <td>$260</td>
+                        <td>$190</td>
+                        <td>$1,650</td>
+                    </tr>
+                    <tr>
+                        <td>Program O</td>
+                        <td>$1,400</td>
+                        <td>$340</td>
+                        <td>$240</td>
+                        <td>$1,980</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Table 4 -->
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Tuition</th>
+                        <th>Books</th>
+                        <th>Materials</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Program P</td>
+                        <td>$1,150</td>
+                        <td>$230</td>
+                        <td>$180</td>
+                        <td>$1,560</td>
+                    </tr>
+                    <tr>
+                        <td>Program Q</td>
+                        <td>$1,350</td>
+                        <td>$330</td>
+                        <td>$220</td>
+                        <td>$1,900</td>
+                    </tr>
+                    <tr>
+                        <td>Program R</td>
+                        <td>$1,050</td>
+                        <td>$210</td>
+                        <td>$160</td>
+                        <td>$1,420</td>
+                    </tr>
+                    <tr>
+                        <td>Program S</td>
+                        <td>$1,250</td>
+                        <td>$270</td>
+                        <td>$190</td>
+                        <td>$1,710</td>
+                    </tr>
+                    <tr>
+                        <td>Program T</td>
+                        <td>$1,450</td>
+                        <td>$350</td>
+                        <td>$250</td>
+                        <td>$1,950</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </nav>
-    <!-- Navbar End -->
+    </section> 
 
+        <!-- MAHITAJI Section -->
+        <section id="mahitaji">
+            <h2>MAHITAJI</h2>
 
-    <!-- Header Start -->
-   
-    <!-- Header End -->
+            <h3>Binafsi</h3>
+            <ul>
+                <li>Vifaa vya darasani daftari 7 (counter book), kalamu ya wino, penseli na rula.</li>
+                <li>Vifaa vya bweni ndoo, godoro, mashuka (2), blanketi, chandarua na vyombo vya kulia chakula (Sahani, kikombe na kijiko).</li>
+            </ul>
 
+            <h3>Kila Kozi</h3>
 
-    <!-- 404 Start -->
-     <!-- Main Content -->
-     <main>
-        <!-- Container 1: Course Table with Filtering and Searching -->
-        <section id="course-table" class="section">
-            <div class="container">
-                <h2>Available Courses</h2>
-                
-                <!-- Search and Filter Controls -->
-                <div class="filter-controls">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="search-input" placeholder="Search by course name..." />
-                    </div>
-                    <div class="filter-box">
-                        <i class="fas fa-filter"></i>
-                        <select id="duration-filter">
-                            <option value="all">All Durations</option>
-                            <option value="short">Short Duration</option>
-                            <option value="long">Long Duration</option>
-                        </select>
-                    </div>
-                </div>
+            <!-- Accordions for each course -->
+            <button class="accordion">USEREMALA</button>
+            <div class="panel">
+                <ul>
+                    <li>Tape measure mbili (3 Metre na 5 metre)</li>
+                    <li>Patasi 2 (mm5 na mm 10)</li>
+                    <li>Nyundo (claw hammer)</li>
+                    <li>Dust musk, over coat la dark blue</li>
+                    <li>Screw driver mbili(star na flat)</li>
+                    <li>Rake, panga, fagio, viatu vya kazi (safety boot)</li>
+                    <li>Rim paper A4 mbili</li>
+                </ul>
+            </div>
 
-                <!-- Courses Table -->
-                <table class="courses-table" aria-label="Available Courses">
-                    <thead>
-                        <tr>
-                            <th>Course</th>
-                            <th>Duration</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Web Development Bootcamp</td>
-                            <td>Long</td>
-                            <td>$499</td>
-                        </tr>
-                        <tr>
-                            <td>Data Science Fundamentals</td>
-                            <td>Long</td>
-                            <td>$599</td>
-                        </tr>
-                        <tr>
-                            <td>Graphic Design Basics</td>
-                            <td>Short</td>
-                            <td>$299</td>
-                        </tr>
-                        <tr>
-                            <td>Digital Marketing 101</td>
-                            <td>Short</td>
-                            <td>$349</td>
-                        </tr>
-                        <!-- Add more courses as needed -->
-                    </tbody>
-                </table>
+            <button class="accordion">UBUNIFU NA USHONAJI MAVAZI</button>
+            <div class="panel">
+                <ul>
+                    <li>Futi Kamba, mkasi wa kukatia nguo</li>
+                    <li>Overcoat jeupe, vitambaa vya kujifunzia mita tatu</li>
+                    <li>Nyuzi, zipu, sindano, uzi, fagio</li>
+                    <li>Sabuni ya maji lita 5, rake</li>
+                    <li>Rim paper A4 mbili</li>
+                </ul>
+            </div>
+
+            <!-- Repeat for other courses -->
+            <button class="accordion">UPISHI (UHUDUMIAJI CHAKULA NA VINYWAJI)</button>
+            <div class="panel">
+                <ul>
+                    <li>Overcoat jeupe, kofia nyeupe au kitambaa cheupe</li>
+                    <li>Apron, sufuria mbili zenye mifuniko, jiko moja</li>
+                    <li>Fagio, sabuni ya maji lita 5, rake</li>
+                    <li>Rim paper A4 mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">UASHI (UJENZI)</button>
+            <div class="panel">
+                <ul>
+                    <li>Futi kamba, tape measure (5 metre)</li>
+                    <li>Steel pass, nyundo ndogo(claw hammer), nyundo kubwa (club hammer)</li>
+                    <li>Karai (motor plan), spirit level (pima maji)</li>
+                    <li>Building square, mwiko, rim paper mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">UMEME WA MAJUMBA</button>
+            <div class="panel">
+                <ul>
+                    <li>Screw driver set, nyundo ndogo, combination plier</li>
+                    <li>Long noice, testa, over-roll la blue</li>
+                    <li>Digital multimeter, fagio, rake, jembe</li>
+                    <li>Viatu vya kazi (safety boot), rim paper A4 mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">DAKTARI MIFUGO</button>
+            <div class="panel">
+                <ul>
+                    <li>Over-roll la kijani, over coat jeupe, gloves nyeupe</li>
+                    <li>Gun boots, cutting knife, stetho-scope</li>
+                    <li>Fagio, sabuni ya maji lita 5, rake</li>
+                    <li>Sindano na bomba lake (siringe and needle), thermometer</li>
+                    <li>Rim paper A4 mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">MECHANICS</button>
+            <div class="panel">
+                <ul>
+                    <li>Over roll dark blue, combination spanner sita namba 10 hadi 20</li>
+                    <li>Digital multimeter, screw driver mbili (flat na star)</li>
+                    <li>Viatu vya kazi (safety boot), fagio, rake, jembe</li>
+                    <li>Rim paper A4 mbili na rim paper A3 mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">UFUNDI BOMBA</button>
+            <div class="panel">
+                <ul>
+                    <li>Over roll la dark blue, pipe wrench number 10</li>
+                    <li>Adjustable spanner, tape measure (5 metre)</li>
+                    <li>Tangiti kopo dogo, viatu vya kazi (rain boot)</li>
+                    <li>Pima maji (spirit level), screw driver (flat na star)</li>
+                    <li>Die machie (nusu inchi na robo tatu), tindo mbili (gold chizo)</li>
+                    <li>Msumeno wa kukatia chuma, fagio, sabuni ya maji lita 5, rake</li>
+                    <li>Rim paper A4 mbili</li>
+                </ul>
+            </div>
+
+            <button class="accordion">UFUNDI WA KUCHOMELEA VYUMA</button>
+            <div class="panel">
+                <ul>
+                    <li>Over roll dark la blue, viatu vya kazi (safety boot)</li>
+                    <li>Stick za kuchomeleaa chuma kilo tano (mild steel electrode E-6013)</li>
+                    <li>Cutting disk moja inchi tisa, grinding disk moja inchi tisa</li>
+                    <li>Groves za Ngozi, tape measure moja</li>
+                    <li>Miwani myeusi, ngao ya macho</li>
+                    <li>Rim paper A4 moja na rim paper A3 moja</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Container 2: Payment Structure Table -->
-        <section id="payment-structure" class="section">
-            <div class="container">
-                <h2>Payment Structure</h2>
-                <table class="payment-table" aria-label="Payment Structure">
-                    <thead>
-                        <tr>
-                            <th>Type of Payment</th>
-                            <th>Year Payment</th>
-                            <th>First Semester</th>
-                            <th>Second Semester</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tuition</td>
-                            <td>$600</td>
-                            <td>$300</td>
-                            <td>$300</td>
-                        </tr>
-                        <tr>
-                            <td>Materials</td>
-                            <td>$200</td>
-                            <td>$100</td>
-                            <td>$100</td>
-                        </tr>
-                        <tr>
-                            <td>Registration</td>
-                            <td>$100</td>
-                            <td>$50</td>
-                            <td>$50</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Total Payment</strong></td>
-                            <td><strong>$900</strong></td>
-                            <td><strong>$450</strong></td>
-                            <td><strong>$450</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <!-- SHERIA Section -->
+        <section id="sheria">
+            <h2>SHERIA ZA CHUO</h2>
+            <p>Unapaswa kuzikubali na kuzitii sheria zote. Kinyume nahapo utachukuliwa hatua za kinidhamu ikiwemo na kurudishwa nyumbani.</p>
 
-        <!-- Container 3: School Instructions with Categories and Sub-Containers -->
-        <section id="school-instructions" class="section">
-            <div class="container">
-                <h2>School Instructions</h2>
-                <div class="instructions-grid">
-                    <!-- Instruction Category 1 -->
-                    <div class="instruction-card">
-                        <h3>Admission Process</h3>
-                        <ul>
-                            <li>Submit application form</li>
-                            <li>Provide necessary documents</li>
-                            <li>Attend interview</li>
-                            <li>Receive admission confirmation</li>
-                        </ul>
-                    </div>
-                    <!-- Instruction Category 2 -->
-                    <div class="instruction-card">
-                        <h3>Attendance Policy</h3>
-                        <ul>
-                            <li>Minimum 75% attendance required</li>
-                            <li>Leave applications must be submitted in advance</li>
-                            <li>Excessive absences may lead to dismissal</li>
-                            <li>Special considerations for emergencies</li>
-                        </ul>
-                    </div>
-                    <!-- Instruction Category 3 -->
-                    <div class="instruction-card">
-                        <h3>Examination Guidelines</h3>
-                        <ul>
-                            <li>All exams are scheduled in advance</li>
-                            <li>Bring valid ID to exams</li>
-                            <li>No electronic devices allowed</li>
-                            <li>Cheating and plagiarism are strictly prohibited</li>
-                        </ul>
-                    </div>
-                    <!-- Instruction Category 4 -->
-                    <div class="instruction-card">
-                        <h3>Graduation Requirements</h3>
-                        <ul>
-                            <li>Complete all required courses</li>
-                            <li>Maintain a minimum GPA of 2.5</li>
-                            <li>Submit a final project or thesis</li>
-                            <li>Attend the graduation ceremony</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h3>Sheria, Taratibu na Kanuni za Chuo</h3>
+            <ul>
+                <li>Heshima kwa viongozi, wazazi, wafanyakazi wote, wanafunzi wengine na jamii kwa ujumla ni jambo la lazima.</li>
+                <li>Mahudhurio mazuri katika kila shughuli ndani na nje ya chuo ni muhimu.</li>
+                <li>Kutimiza kwa makini maandalio ya jioni (preparation).</li>
+                <li>Kuwahi katika kila shughuli za chuo na nyengine utakazopewa.</li>
+                <li>Kufahamu mipaka ya chuo na kuzingatia kikamilifu maelekezo juu ya kuwepo ndani na nje ya mipaka hiyo wakati wote wa uanafunzi wako katika chuo hiki.</li>
+                <li>Kutunza usafi wa mwili na mazingira ya chuo.</li>
+                <li>Kuvaa sare ya chuo wakati wote unapotakiwa.</li>
+                <li>Kuzingatia ratiba ya chuo wakati wote.</li>
+            </ul>
+
+            <h3>Makosa Yanayoweza Kusababisha Kufukuzwa Chuo</h3>
+            <ul>
+                <li>Wizi</li>
+                <li>Uasherati na ushoga</li>
+                <li>Ubakaji</li>
+                <li>Ulevi na matumizi ya madawa ya kulevya kama vile uvutaji bangi, cocaine, mirungi, kuberi n.k</li>
+                <li>Waislamu wanapaswa kuvaa hijabu nyeupe isiyo na urembo wowote kinyume nahapo ni kosa linaloweza kukusababisha kufukuzwa chuo.</li>
+                <li>Kupigana mwanafunzi kwa mwanafunzi, kumpiga mwalimu au na mtu yeyote yule.</li>
+                <li>Kuharibu kwa makusudi mali ya umma.</li>
+                <li>Kupata mimba au kuharibu mimba ndani na nje ya chuo.</li>
+                <li>Kutumia lugha chafu na kutukana watu.</li>
+                <li>Kumiliki vitu vya hatari/kifaha kama, majiko/heaters, chaja, pasi ya umeme, radio n.k</li>
+            </ul>
         </section>
-    </main>
 
     
-     <!-- 404 End -->
-        
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="404.html">Privacy Policy</a>
-                    <a class="btn btn-link" href="404.html">Terms & Condition</a>
-                    <a class="btn btn-link" href="faqs.html">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>kibosho ,Moshi, Kilimanjaro, Tanzania</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+255 0716111122</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>msingafdc@moe.go.tz</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/bomba 1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/chekechea 2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/wanampira 2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/wanafunz.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/mwalim.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/umeme 3.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://.com">zainabu</a><br><br>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="index.html">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="404.html">Help</a>
-                            <a href="faqs.html">FQAs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- Footer End -->
 
+    <footer>
+        <p>&copy; 2024 ZINGATIA Chuo. All rights reserved.</p>
+    </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- JavaScript for Accordion -->
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-
-    <div id="course-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-course-title">Course Title</h2>
-            <p id="modal-course-details">Detailed information about the course...</p>
-        </div>
-    </div>
-    <!-- Template Javascript -->
-
-    <script src="js/course.js"></script>
 </body>
-
 </html>
