@@ -459,7 +459,7 @@
     flex: 0 1 calc(50% - 10px); /* Two cards per row */
     margin: 5px; /* Space between cards */
     max-width: calc(50% - 10px); /* Ensure two cards fit in one row */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 24px; /* Rounded corners */
     overflow: hidden; /* Clip overflowing content */
     position: relative; /* Position for absolute child elements */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -510,7 +510,12 @@
 }
 
 
+
 /*** Team ***/
+.team-item{
+    border-radius: 20px;
+}
+
 .team-item img {
     transition: .5s;
 }
