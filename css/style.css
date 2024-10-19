@@ -22,6 +22,13 @@
     z-index: 99;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: hsla(87, 15%, 88%, 0.89);
+}
+
 
 /*** Spinner ***/
 #spinner {
@@ -519,6 +526,7 @@
 
 .team-item img {
     transition: .5s;
+    border-radius: 18px;
 }
 
 .team-item:hover img {
