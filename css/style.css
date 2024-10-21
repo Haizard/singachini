@@ -306,12 +306,12 @@ body {
 .custom-card h5 {
     font-size: 1.2rem; /* Slightly smaller heading size */
     font-weight: bold; /* Bold heading */
-    color: #343a40; /* Dark text color */
+    color: #c61c2c; /* Dark text color */
     margin-bottom: 10px; /* Space below heading */
 }
 
 .custom-card p {
-    color: #6c757d; /* Text color */
+    color: #664d03; /* Text color */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove padding */
     font-size: 0.9rem; /* Adjust paragraph size for better fit */
@@ -788,6 +788,7 @@ body {
 .img-fluid {
     object-fit: contain;
     width: 100%;
+    border-radius: 1rem;
 }
 
 
