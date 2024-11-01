@@ -207,14 +207,14 @@ body {
 }
 
 .page-header {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/home.jpg);
+    background: url(../img/home.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .page-header3 {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/chekechea\ 1.jpg);
+    background: url(../img/chekechea\ 1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -223,7 +223,7 @@ body {
 }
 
 .page-header2 {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/home.jpg);
+    background: url(../img/home.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
